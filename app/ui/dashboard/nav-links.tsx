@@ -6,20 +6,16 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { name: "Challenge 1", href: "/challenge-1", icon: BookmarkIcon },
-  {
-    name: "Challenge 2",
-    href: "/challenge-2",
-    icon: BookmarkIcon,
-  },
-  { name: "Challenge 3", href: "/challenge-3", icon: BookmarkIcon },
-  { name: "Challenge 4", href: "/challenge-4", icon: BookmarkIcon },
-  { name: "Challenge 5", href: "/challenge-5", icon: BookmarkIcon },
-  { name: "Challenge 6", href: "/challenge-6", icon: BookmarkIcon },
-  { name: "Challenge 7", href: "/challenge-7", icon: BookmarkIcon },
-  { name: "Challenge 8", href: "/challenge-8", icon: BookmarkIcon },
-  { name: "Challenge 9", href: "/challenge-9", icon: BookmarkIcon },
-  { name: "Challenge 10", href: "/challenge-10", icon: BookmarkIcon },
+  { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
+  { name: "Challenge 2", href: "/dashboard/challenge-2", icon: BookmarkIcon },
+  { name: "Challenge 3", href: "/dashboard/challenge-3", icon: BookmarkIcon },
+  { name: "Challenge 4", href: "/dashboard/challenge-4", icon: BookmarkIcon },
+  { name: "Challenge 5", href: "/dashboard/challenge-5", icon: BookmarkIcon },
+  { name: "Challenge 6", href: "/dashboard/challenge-6", icon: BookmarkIcon },
+  { name: "Challenge 7", href: "/dashboard/challenge-7", icon: BookmarkIcon },
+  { name: "Challenge 8", href: "/dashboard/challenge-8", icon: BookmarkIcon },
+  { name: "Challenge 9", href: "/dashboard/challenge-9", icon: BookmarkIcon },
+  { name: "Challenge 10", href: "/dashboard/challenge-10", icon: BookmarkIcon },
 ];
 
 function NavLinks({}) {
