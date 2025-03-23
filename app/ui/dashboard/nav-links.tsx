@@ -8,7 +8,11 @@ import { usePathname } from "next/navigation";
 const links = [
   { name: "List of Refs", href: "/dashboard/list-of-refs", icon: BookmarkIcon },
   { name: "Stopwatch", href: "/dashboard/stopwatch", icon: BookmarkIcon },
-  { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
+  {
+    name: "Image Carousel",
+    href: "/dashboard/image-carousel",
+    icon: BookmarkIcon,
+  },
   { name: "Challenge 2", href: "/dashboard/challenge-2", icon: BookmarkIcon },
   { name: "Challenge 3", href: "/dashboard/challenge-3", icon: BookmarkIcon },
   { name: "Challenge 4", href: "/dashboard/challenge-4", icon: BookmarkIcon },
