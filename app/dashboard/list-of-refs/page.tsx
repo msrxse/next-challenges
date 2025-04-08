@@ -49,7 +49,7 @@ function Page() {
   }
 
   return (
-    <div className="bg-gray-100 h-full flex flex-col items-center justify-center overflow-hidden">
+    <main className="bg-gray-100 h-full flex flex-col items-center justify-center overflow-hidden">
       List of Refs
       <div className="py-2">
         {cats.map((cat) => (
@@ -87,7 +87,7 @@ function Page() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

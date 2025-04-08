@@ -32,7 +32,7 @@ function Page() {
   }
 
   return (
-    <div className="bg-gray-100 h-full flex flex-col justify-around items-center p-4">
+    <main className="bg-gray-100 h-full flex flex-col justify-around items-center p-4">
       <div>
         <h1 className="text-3xl font-bold text-center mb-5">Stopwatch</h1>
         <p>
@@ -74,7 +74,7 @@ function Page() {
       <div className="flex justify-center items-center font-mono mt-4 border-dashed border-gray-400 border-2 w-[40%] h-[20%] bg-amber-50 rounded-md">
         Time passed: {secondsPassed.toFixed(3)}
       </div>
-    </div>
+    </main>
   );
 }
 
