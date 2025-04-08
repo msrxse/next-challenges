@@ -13,6 +13,11 @@ const links = [
     href: "/dashboard/image-carousel",
     icon: BookmarkIcon,
   },
+  {
+    name: "useDeferredValue",
+    href: "/dashboard/useDeferredValue",
+    icon: BookmarkIcon,
+  },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
