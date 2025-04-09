@@ -1,7 +1,8 @@
-import SearchInput from "@/app/dashboard/useDeferredValue/searchInput";
-import SearchResults from "@/app/dashboard/useDeferredValue/searchResults";
+import SearchInput from "@/app/dashboard/album-list/searchInput";
+import SearchResults from "@/app/dashboard/album-list/searchResults";
+import { SkeletonList } from "@/app/dashboard/album-list/skeletonList";
 
-import React, { use, Suspense } from "react";
+import React, { Suspense } from "react";
 export interface Album {
   id: number;
   artist: string;
@@ -13,19 +14,31 @@ const data: Album[] = [
     id: 1,
     artist: "Steve Aoki",
     title: "Hey Alligator",
-    album: "warner",
+    album: "Afterlife Records",
   },
-  { id: 2, artist: "Darko Esser", title: "True Feeling", album: "warner" },
+  {
+    id: 2,
+    artist: "Darko Esser",
+    title: "True Feeling",
+    album: "Drumcode Records",
+  },
   {
     id: 3,
     artist: "Gerd Janson",
     title: "Written in the scars",
-    album: "warner",
+    album: "Token Records",
   },
-  { id: 4, artist: "Helena Hauff", title: "Without you", album: "warner" },
+  {
+    id: 4,
+    artist: "Helena Hauff",
+    title: "Without you",
+    album: "Filth on Acid",
+  },
 ];
 
-const fetchAlbums: (query: string) => Promise<Album[]> = (query: string) =>
+export const fetchAlbums: (query: string) => Promise<Album[]> = (
+  query: string
+) =>
   new Promise((resolve) => {
     setTimeout(() => {
       const filtered = query
@@ -37,10 +50,8 @@ const fetchAlbums: (query: string) => Promise<Album[]> = (query: string) =>
     }, 600);
   });
 
-function Page({ searchParams }: { searchParams: { search: string } }) {
-  const { search } = searchParams;
-
-  const albums: Album[] = use(fetchAlbums(search));
+async function Page({ searchParams }: { searchParams: { search: string } }) {
+  const { search } = (await searchParams) || "";
 
   return (
     <main className="bg-gray-100 h-full flex flex-col p-4 justify-evenly">
@@ -55,12 +66,16 @@ function Page({ searchParams }: { searchParams: { search: string } }) {
             Inputs writes URL with URLSearchParams utility and reads with
             useSearchParams() hook.
           </li>
+          <li>
+            Adding suspense means the page won’t block — it’ll render the
+            fallback while waiting for data.
+          </li>
         </ul>
       </div>
       <div>
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<SkeletonList />}>
           <SearchInput />
-          <SearchResults albums={albums} />
+          <SearchResults query={search} />
         </Suspense>
       </div>
     </main>
