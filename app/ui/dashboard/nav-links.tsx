@@ -1,7 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { BookmarkIcon, MusicalNoteIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  MusicalNoteIcon,
+  WindowIcon,
+} from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
@@ -14,10 +18,11 @@ const links = [
     icon: BookmarkIcon,
   },
   {
-    name: "album-list",
+    name: "Album List",
     href: "/dashboard/album-list",
     icon: MusicalNoteIcon,
   },
+  { name: "Modal Dialog", href: "/dashboard/modal-dialog", icon: WindowIcon },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
