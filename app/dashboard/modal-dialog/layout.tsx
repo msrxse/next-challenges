@@ -1,13 +1,13 @@
 export default function Layout({
-  auth,
   children,
+  modal,
 }: {
-  auth: React.ReactNode;
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <>
-      <div>{auth}</div>
+      <div>{modal}</div>
       <div>{children}</div>
     </>
   );
