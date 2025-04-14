@@ -1,5 +1,10 @@
 import Login from "@/app/ui/login/login";
+import { Modal } from "@/app/ui/modal";
 
 export default function Page() {
-  return <Login from="login as a modal" />;
+  return (
+    <Modal>
+      <Login />
+    </Modal>
+  );
 }
