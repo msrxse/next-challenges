@@ -10,7 +10,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
     <>
       <div className="fixed inset-0 opacity-25 bg-black"></div>
       <div className="fixed inset-0 flex justify-center items-center z-10">
-        <div className="relative bg-white w-md h-40 p-2">
+        <div className="relative w-md p-2">
           <Button
             className="absolute right-2 top-2"
             onClick={() => {
