@@ -3,6 +3,10 @@
 import Link from "next/link";
 import {
   BookmarkIcon,
+  CloudIcon,
+  ForwardIcon,
+  HandRaisedIcon,
+  ListBulletIcon,
   MusicalNoteIcon,
   WindowIcon,
 } from "@heroicons/react/24/outline";
@@ -10,12 +14,16 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { name: "List of Refs", href: "/dashboard/list-of-refs", icon: BookmarkIcon },
-  { name: "Stopwatch", href: "/dashboard/stopwatch", icon: BookmarkIcon },
+  {
+    name: "List of Refs",
+    href: "/dashboard/list-of-refs",
+    icon: ListBulletIcon,
+  },
+  { name: "Stopwatch", href: "/dashboard/stopwatch", icon: HandRaisedIcon },
   {
     name: "Image Carousel",
     href: "/dashboard/image-carousel",
-    icon: BookmarkIcon,
+    icon: ForwardIcon,
   },
   {
     name: "Album List",
@@ -23,6 +31,11 @@ const links = [
     icon: MusicalNoteIcon,
   },
   { name: "Modal Dialog", href: "/dashboard/modal-dialog", icon: WindowIcon },
+  {
+    name: "Track a value",
+    href: "/dashboard/track-a-value",
+    icon: CloudIcon,
+  },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
