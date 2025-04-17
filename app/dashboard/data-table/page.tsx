@@ -151,22 +151,24 @@ function Page() {
             <tr>
               <td
                 colSpan={5}
-                className="flex flex-nowrap px-6 py-3 text-left font-semibold text-gray-900"
+                className="px-6 py-3 text-left font-semibold text-gray-900"
               >
-                <button className="flex pr-2">
-                  <ChevronLeftIcon className="w-4" />
-                  Previous
-                </button>
-                <span className="text-sm font-normal text-gray-500 mb-0 inline w-auto space-x-1 whitespace-nowrap">
-                  <span>Showing</span>
-                  <span className="font-semibold text-gray-900">1-6</span>
-                  <span>of</span>
-                  <span className="font-semibold text-gray-900">1000</span>
+                <span className="flex whitespace-nowrap">
+                  <button className="flex pr-2">
+                    <ChevronLeftIcon className="w-4" />
+                    Previous
+                  </button>
+                  <span className="text-sm font-normal text-gray-500 mb-0 inline w-auto space-x-1">
+                    <span>Showing</span>
+                    <span className="font-semibold text-gray-900">1-6</span>
+                    <span>of</span>
+                    <span className="font-semibold text-gray-900">1000</span>
+                  </span>
+                  <button className="flex pl-2">
+                    Next
+                    <ChevronRightIcon className="w-4" />
+                  </button>
                 </span>
-                <button className="flex pl-2">
-                  Next
-                  <ChevronRightIcon className="w-4" />
-                </button>
               </td>
             </tr>
           </tfoot>
