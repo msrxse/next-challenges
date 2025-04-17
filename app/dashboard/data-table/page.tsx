@@ -110,22 +110,22 @@ function Page() {
                 <td
                   scope="col"
                   className="px-6 py-3 whitespace-nowrap"
-                  tabIndex={-1}
+                  tabIndex={0}
                 >
                   {each.date}
                 </td>
                 <td
                   scope="col"
                   className="px-6 py-3 whitespace-nowrap"
-                  tabIndex={-1}
+                  tabIndex={0}
                 >
                   {each.type}
                 </td>
                 <td scope="col">
                   <a
                     className="px-6 py-3 whitespace-nowrap"
-                    tabIndex={-1}
                     href="#"
+                    tabIndex={0}
                   >
                     {each.description}
                   </a>
@@ -133,14 +133,14 @@ function Page() {
                 <td
                   scope="col"
                   className="px-6 py-3 whitespace-nowrap text-right"
-                  tabIndex={-1}
+                  tabIndex={0}
                 >
                   {each.amount}
                 </td>
                 <td
                   scope="col"
                   className="px-6 py-3 whitespace-nowrap text-right"
-                  tabIndex={-1}
+                  tabIndex={0}
                 >
                   {each.balance}
                 </td>
@@ -154,7 +154,7 @@ function Page() {
                 className="px-6 py-3 text-left font-semibold text-gray-900"
               >
                 <span className="flex whitespace-nowrap">
-                  <button className="flex pr-2">
+                  <button className="flex pr-2 cursor-pointer hover:underline">
                     <ChevronLeftIcon className="w-4" />
                     Previous
                   </button>
@@ -164,7 +164,7 @@ function Page() {
                     <span>of</span>
                     <span className="font-semibold text-gray-900">1000</span>
                   </span>
-                  <button className="flex pl-2">
+                  <button className="flex pl-2 cursor-pointer hover:underline">
                     Next
                     <ChevronRightIcon className="w-4" />
                   </button>
