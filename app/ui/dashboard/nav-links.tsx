@@ -8,6 +8,7 @@ import {
   HandRaisedIcon,
   ListBulletIcon,
   MusicalNoteIcon,
+  TableCellsIcon,
   WindowIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
@@ -36,6 +37,7 @@ const links = [
     href: "/dashboard/track-a-value",
     icon: CloudIcon,
   },
+  { name: "Data Table", href: "/dashboard/data-table", icon: TableCellsIcon },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
