@@ -1,11 +1,20 @@
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronUpDownIcon,
-} from "@heroicons/react/24/outline";
-import React from "react";
+"use client";
 
-const DATA = [
+import SearchInput from "@/app/dashboard/data-table/searchInput";
+import Table from "@/app/dashboard/data-table/table";
+
+import React, { useEffect, useState } from "react";
+
+export interface Data {
+  id: number;
+  date: string;
+  type: string;
+  description: string;
+  amount: string;
+  balance: string;
+}
+
+const DATA: Data[] = [
   {
     id: 1,
     date: "01-Jan-16",
@@ -55,124 +64,34 @@ const DATA = [
     balance: "$995,532.00",
   },
 ];
+
+const fetchData = (query: string): Promise<Data[]> => {
+  return new Promise((resolve) => {
+    let result = DATA;
+    if (query) {
+      result = DATA.filter((tx) =>
+        tx.description.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+    setTimeout(() => {
+      resolve(result);
+    }, 500);
+  });
+};
+
 function Page() {
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState<Data[]>([]);
+
+  useEffect(() => {
+    fetchData(query).then((d) => setData(d));
+  }, [query]);
+
   return (
     <main className="bg-gray-100 h-full flex flex-col justify-center">
       <div className="relative overflow-x-auto border border-gray-400 shadow-md rounded-lg">
-        <div className="px-4 py-2 bg-gray-100 border-b-1 border-gray-300">
-          <label htmlFor="table-search" className="sr-only">
-            Search
-          </label>
-          <input
-            type="text"
-            id="table-search"
-            className="block p-1 tex-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Search for items"
-          ></input>
-        </div>
-        <table
-          id="ex1-grid"
-          role="grid"
-          className="w-full text-sm text-left text-gray-500"
-        >
-          <caption className="p-5 text-lg font-semibold text-left text-gray-900 bg-white">
-            Data table
-            <p className="mt-1 text-sm font-normal text-gray-500">
-              Transactions January 1 through January 6
-            </p>
-          </caption>
-          <thead className="text-xs text-gray-700 uppercase bg-gray-200">
-            <tr>
-              <th scope="col" className="flex px-6 py-3">
-                Date
-                <ChevronUpDownIcon className="w-4" />
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Type
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Description
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Amount
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Balance
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {DATA.map((each) => (
-              <tr
-                key={each.id}
-                className="odd:bg-white even:bg-gray-50 border-b border-gray-200 hover:bg-blue-50"
-              >
-                <td
-                  scope="col"
-                  className="px-6 py-3 whitespace-nowrap"
-                  tabIndex={0}
-                >
-                  {each.date}
-                </td>
-                <td
-                  scope="col"
-                  className="px-6 py-3 whitespace-nowrap"
-                  tabIndex={0}
-                >
-                  {each.type}
-                </td>
-                <td scope="col">
-                  <a
-                    className="px-6 py-3 whitespace-nowrap"
-                    href="#"
-                    tabIndex={0}
-                  >
-                    {each.description}
-                  </a>
-                </td>
-                <td
-                  scope="col"
-                  className="px-6 py-3 whitespace-nowrap text-right"
-                  tabIndex={0}
-                >
-                  {each.amount}
-                </td>
-                <td
-                  scope="col"
-                  className="px-6 py-3 whitespace-nowrap text-right"
-                  tabIndex={0}
-                >
-                  {each.balance}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td
-                colSpan={5}
-                className="px-6 py-3 text-left font-semibold text-gray-900"
-              >
-                <span className="flex whitespace-nowrap">
-                  <button className="flex pr-2 cursor-pointer hover:underline">
-                    <ChevronLeftIcon className="w-4" />
-                    Previous
-                  </button>
-                  <span className="text-sm font-normal text-gray-500 mb-0 inline w-auto space-x-1">
-                    <span>Showing</span>
-                    <span className="font-semibold text-gray-900">1-6</span>
-                    <span>of</span>
-                    <span className="font-semibold text-gray-900">1000</span>
-                  </span>
-                  <button className="flex pl-2 cursor-pointer hover:underline">
-                    Next
-                    <ChevronRightIcon className="w-4" />
-                  </button>
-                </span>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+        <SearchInput query={query} setQuery={setQuery} />
+        <Table data={data} />
       </div>
     </main>
   );
