@@ -8,6 +8,7 @@ import {
   HandRaisedIcon,
   ListBulletIcon,
   MusicalNoteIcon,
+  NumberedListIcon,
   TableCellsIcon,
   TicketIcon,
   WindowIcon,
@@ -40,6 +41,11 @@ const links = [
   },
   { name: "Data Table", href: "/dashboard/data-table", icon: TableCellsIcon },
   { name: "Tic-Tac-Toe", href: "/dashboard/tic-tac-toe", icon: TicketIcon },
+  {
+    name: "Roving Focus List",
+    href: "/dashboard/roving-focus-list",
+    icon: NumberedListIcon,
+  },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
