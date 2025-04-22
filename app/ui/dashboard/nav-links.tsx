@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {
+  BanknotesIcon,
   BookmarkIcon,
   CloudIcon,
   ForwardIcon,
@@ -46,6 +47,7 @@ const links = [
     href: "/dashboard/roving-focus-list",
     icon: NumberedListIcon,
   },
+  { name: "Banking App", href: "/dashboard/banking-app", icon: BanknotesIcon },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
