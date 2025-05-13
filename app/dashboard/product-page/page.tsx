@@ -46,7 +46,12 @@ function Page() {
             </p>
             <div className="mt-4 sm:mt-6">
               <a
-                className="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-400 text-white uppercase tracking-wider font-semibold text-sm sm:text-base"
+                className="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 
+                hover:bg-indigo-400 hover:-translate-y-0.5 
+                focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 
+                active:bg-indigo-600
+                  transform transition text-white uppercase
+                  tracking-wider font-semibold text-sm sm:text-base"
                 href="#"
               >
                 Book your scape
