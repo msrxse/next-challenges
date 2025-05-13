@@ -6,6 +6,7 @@ import {
   BookmarkIcon,
   CloudIcon,
   ForwardIcon,
+  GiftTopIcon,
   HandRaisedIcon,
   ListBulletIcon,
   MusicalNoteIcon,
@@ -48,6 +49,7 @@ const links = [
     icon: NumberedListIcon,
   },
   { name: "Banking App", href: "/dashboard/banking-app", icon: BanknotesIcon },
+  { name: "Product Page", href: "/dashboard/product-page", icon: GiftTopIcon },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
 ];
 
