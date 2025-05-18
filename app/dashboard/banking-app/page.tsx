@@ -1,50 +1,50 @@
-import React from "react";
+import React from 'react'
 
 interface History {
-  id: string;
-  action: string;
-  amount: string;
-  remaining: string;
+  id: string
+  action: string
+  amount: string
+  remaining: string
 }
 
 interface Data {
-  balance: string;
-  history: History[];
+  balance: string
+  history: History[]
 }
 
 const DATA: Data = {
-  balance: "£23.546,00",
+  balance: '£23.546,00',
   history: [
-    { id: "1", action: "withdraw", amount: "£23,54", remaining: "£23.522,46" },
-    { id: "2", action: "withdraw", amount: "£23,54", remaining: "£23.500,02" },
-    { id: "3", action: "withdraw", amount: "£23,54", remaining: "£23.480,22" },
+    { id: '1', action: 'withdraw', amount: '£23,54', remaining: '£23.522,46' },
+    { id: '2', action: 'withdraw', amount: '£23,54', remaining: '£23.500,02' },
+    { id: '3', action: 'withdraw', amount: '£23,54', remaining: '£23.480,22' },
   ],
-};
+}
 
 function Page() {
   return (
-    <main className="bg-gray-100 h-full flex flex-col justify-center items-center">
-      <h1 className="text-2xl text-gray-800 mb-4">
+    <main className="flex h-full flex-col items-center justify-center bg-gray-100">
+      <h1 className="mb-4 text-2xl text-gray-800">
         Banking app with timed withdrawals
       </h1>
-      <p className="text-sm text-gray-800 w-[80%] mb-4">
+      <p className="mb-4 w-[80%] text-sm text-gray-800">
         Build an application for a bank app. See how credits are used and time
         the deposits and withdrawals. Set up a timed withdrawal
       </p>
-      <div className="border border-gray-300 w-[80%] p-4 mb-2">
+      <div className="mb-2 w-[80%] border border-gray-300 p-4">
         <div className="flex justify-end">
           <p>{`Balance: ${DATA.balance}`}</p>
         </div>
       </div>
-      <div className="border border-gray-300 w-[80%] p-4 mb-2">
+      <div className="mb-2 w-[80%] border border-gray-300 p-4">
         <div className="flex flex-col items-end">
-          <p className="text-md font-bold text-gray-800 border-b border-gray-500 w-full text-right">
+          <p className="text-md w-full border-b border-gray-500 text-right font-bold text-gray-800">
             History of transactions
           </p>
           <ul className="w-full divide-y divide-gray-500">
             {DATA.history.map((transaction) => (
               <li
-                className="flex justify- space-y-2 pt-2 justify-between"
+                className="justify- flex justify-between space-y-2 pt-2"
                 key={transaction.id}
               >
                 <p>
@@ -61,17 +61,17 @@ function Page() {
           </ul>
         </div>
       </div>
-      <div className="border border-gray-300 w-[80%] p-4">
-        <p className="text-md font-bold text-gray-800 border-b border-gray-500 w-full text-right">
+      <div className="w-[80%] border border-gray-300 p-4">
+        <p className="text-md w-full border-b border-gray-500 text-right font-bold text-gray-800">
           WithDrawal Form
         </p>
         <div className="pb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="mb-2 block text-sm font-bold text-gray-700"
             htmlFor="withdrawal"
           ></label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
             id="withdrawal"
             type="text"
             placeholder="Amount to withdrawal"
@@ -79,7 +79,7 @@ function Page() {
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page

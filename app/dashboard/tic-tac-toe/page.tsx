@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import Games from "@/app/dashboard/tic-tac-toe/games";
-import Square from "@/app/dashboard/tic-tac-toe/Square";
-import React, { useState } from "react";
-export type Value = "X" | "O" | null;
+import Games from '@/app/dashboard/tic-tac-toe/games'
+import Square from '@/app/dashboard/tic-tac-toe/Square'
+import React, { useState } from 'react'
+export type Value = 'X' | 'O' | null
 
 function calculateWinner(squares: Value[]) {
   const lines = [
@@ -15,54 +15,54 @@ function calculateWinner(squares: Value[]) {
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-  ];
+  ]
   for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+    const [a, b, c] = lines[i]
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return squares[a]
     }
   }
-  return null;
+  return null
 }
 
 function Page() {
-  const [squares, setSquares] = useState<Value[]>(Array(9).fill(null));
-  const [history, setHistory] = useState<Value[][]>([Array(9).fill(null)]);
+  const [squares, setSquares] = useState<Value[]>(Array(9).fill(null))
+  const [history, setHistory] = useState<Value[][]>([Array(9).fill(null)])
 
-  const xIsNext = history.length % 2 === 0;
-  const winner = calculateWinner(squares);
-  let status;
+  const xIsNext = history.length % 2 === 0
+  const winner = calculateWinner(squares)
+  let status
   if (winner) {
-    status = "Winner: " + winner;
+    status = 'Winner: ' + winner
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O')
   }
 
   const handleClick = (index: number) => {
     if (squares[index] || calculateWinner(squares)) {
-      return;
+      return
     }
-    const nextSquares = squares.slice();
+    const nextSquares = squares.slice()
     if (xIsNext) {
-      nextSquares[index] = "X";
+      nextSquares[index] = 'X'
     } else {
-      nextSquares[index] = "O";
+      nextSquares[index] = 'O'
     }
-    setSquares(nextSquares);
-    setHistory([...history, nextSquares]);
-  };
+    setSquares(nextSquares)
+    setHistory([...history, nextSquares])
+  }
 
   function handlePlay(currentMove: number) {
-    const nextHistory = [...history.slice(0, currentMove + 1)];
-    setSquares(nextHistory[currentMove]);
-    setHistory(nextHistory);
+    const nextHistory = [...history.slice(0, currentMove + 1)]
+    setSquares(nextHistory[currentMove])
+    setHistory(nextHistory)
   }
 
   return (
-    <main className="bg-gray-100 h-full flex flex-col justify-center items-center">
-      <h1 className="text-xl text-gray-900 mb-4">tic-tac-toe</h1>
+    <main className="flex h-full flex-col items-center justify-center bg-gray-100">
+      <h1 className="mb-4 text-xl text-gray-900">tic-tac-toe</h1>
       <h1 className="text-xl text-red-800">{status}</h1>
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <div className="grid grid-cols-3 gap-3">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -74,12 +74,12 @@ function Page() {
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
-        <div className="h-full border border-gray-300 p-2 ml-3 min-w-30">
+        <div className="ml-3 h-full min-w-30 border border-gray-300 p-2">
           <Games history={history} onPlay={handlePlay} />
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page

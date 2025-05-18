@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { useCallback, useEffect, useRef } from "react";
-import { type Dog } from "./page";
+import { useCallback, useEffect, useRef } from 'react'
+import { type Dog } from './page'
 
 function Item({
   dog,
@@ -9,25 +9,25 @@ function Item({
   index,
   setCurrentFocus,
 }: {
-  dog: Dog;
-  currentFocus: boolean;
-  index: number;
-  setCurrentFocus: (i: number) => void;
+  dog: Dog
+  currentFocus: boolean
+  index: number
+  setCurrentFocus: (i: number) => void
 }) {
-  const ref = useRef<HTMLLIElement>(null);
+  const ref = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     if (currentFocus && ref.current) {
       // Slight delay to ensure DOM is updated
       setTimeout(() => {
-        ref.current?.focus();
-      }, 0);
+        ref.current?.focus()
+      }, 0)
     }
-  }, [currentFocus]);
+  }, [currentFocus])
 
   const handleSelect = useCallback(() => {
-    setCurrentFocus(index);
-  }, [index, setCurrentFocus]);
+    setCurrentFocus(index)
+  }, [index, setCurrentFocus])
 
   return (
     <li
@@ -36,11 +36,11 @@ function Item({
       role="option"
       aria-selected={currentFocus}
       onClick={handleSelect}
-      className="text-sm text-gray-900 truncate px-1 py-1.5"
+      className="truncate px-1 py-1.5 text-sm text-gray-900"
     >
       {dog.dog}
     </li>
-  );
+  )
 }
 
-export default Item;
+export default Item

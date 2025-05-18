@@ -1,11 +1,11 @@
-import { lusitana } from "@/app/ui/fonts";
-import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { lusitana } from '@/app/ui/fonts'
+import Link from 'next/link'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <div className="h-screen justify-items-center content-center">
+      <div className="h-screen content-center justify-items-center">
         <p
           className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
         >
@@ -20,5 +20,5 @@ export default function Home() {
         </Link>
       </div>
     </main>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-import SideNav from "@/app/ui/dashboard/SideNav";
+import SideNav from '@/app/ui/dashboard/SideNav'
 
-import React from "react";
+import React from 'react'
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +10,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="flex-grow p-6 md:overflow-y-auto">{children}</div>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

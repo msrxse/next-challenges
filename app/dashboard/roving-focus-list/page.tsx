@@ -1,82 +1,82 @@
-"use client";
+'use client'
 
-import Item from "@/app/dashboard/roving-focus-list/item";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import Item from '@/app/dashboard/roving-focus-list/item'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 export interface Dog {
-  id: number;
-  dog: string;
+  id: number
+  dog: string
 }
 export const dogs: Dog[] = [
   {
     id: 1,
-    dog: "Grand Bleu de Gascogne",
+    dog: 'Grand Bleu de Gascogne',
   },
   {
     id: 2,
-    dog: "Yakutian Laika",
+    dog: 'Yakutian Laika',
   },
   {
     id: 3,
-    dog: "Portuguese Podengo",
+    dog: 'Portuguese Podengo',
   },
   {
     id: 4,
-    dog: "Tornjak",
+    dog: 'Tornjak',
   },
   {
     id: 5,
-    dog: "Affenpinscher",
+    dog: 'Affenpinscher',
   },
   {
     id: 6,
-    dog: "Black Mouth Cur",
+    dog: 'Black Mouth Cur',
   },
   {
     id: 7,
-    dog: "Denmark Feist",
+    dog: 'Denmark Feist',
   },
   {
     id: 8,
-    dog: "Yorkshire Terrier",
+    dog: 'Yorkshire Terrier',
   },
   {
     id: 9,
-    dog: "Border Terrier",
+    dog: 'Border Terrier',
   },
-];
+]
 
 function Page() {
-  const listRef = useRef<HTMLUListElement>(null);
-  const [currentFocus, setCurrentFocus] = useState<number>(0);
+  const listRef = useRef<HTMLUListElement>(null)
+  const [currentFocus, setCurrentFocus] = useState<number>(0)
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
-      const size = dogs.length;
-      if (event.key === "ArrowDown") {
-        event.preventDefault();
-        setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1);
-      } else if (event.key === "ArrowUp") {
-        event.preventDefault();
-        setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1);
+      const size = dogs.length
+      if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        setCurrentFocus(currentFocus === size - 1 ? 0 : currentFocus + 1)
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault()
+        setCurrentFocus(currentFocus === 0 ? size - 1 : currentFocus - 1)
       }
     },
     [currentFocus]
-  );
+  )
 
   useEffect(() => {
-    const listElement = listRef.current;
-    listElement?.addEventListener("keydown", handleKeyDown, false);
+    const listElement = listRef.current
+    listElement?.addEventListener('keydown', handleKeyDown, false)
 
     return () => {
-      listElement?.removeEventListener("keydown", handleKeyDown, false);
-    };
-  }, [handleKeyDown]);
+      listElement?.removeEventListener('keydown', handleKeyDown, false)
+    }
+  }, [handleKeyDown])
 
   return (
-    <main className="bg-gray-100 h-full flex flex-col justify-center items-center">
-      <h1 className="text-3xl text-gray-800 pb-4">Roving Focus List</h1>
-      <h2 className="text-2xl text-gray-800 pb-4">Roving focus Technique</h2>
-      <ul className="list-disc w-[70%] mb-4 text-sm text-gray-800">
+    <main className="flex h-full flex-col items-center justify-center bg-gray-100">
+      <h1 className="pb-4 text-3xl text-gray-800">Roving Focus List</h1>
+      <h2 className="pb-4 text-2xl text-gray-800">Roving focus Technique</h2>
+      <ul className="mb-4 w-[70%] list-disc text-sm text-gray-800">
         <li>
           We want to move the focus of between list items using arrow keys to
           make it more accessible and keyboard friendly.
@@ -94,7 +94,7 @@ function Page() {
         role="listbox"
         ref={listRef}
         tabIndex={0}
-        className="border border-gray-300 w-40 min-h-60 divide-y divide-gray-300"
+        className="min-h-60 w-40 divide-y divide-gray-300 border border-gray-300"
       >
         {dogs.map((dog, index) => (
           <Item
@@ -107,7 +107,7 @@ function Page() {
         ))}
       </ul>
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page

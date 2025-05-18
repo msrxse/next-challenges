@@ -1,53 +1,51 @@
-"use client";
-
-import React from "react";
+'use client'
 
 function Page() {
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("form sended");
-  };
+    e.preventDefault()
+    console.log('form sended')
+  }
 
   return (
-    <main className="bg-gray-100 h-full flex justify-center items-center">
-      <div className="p-6 space-y-6 sm:p-8">
+    <main className="flex h-full items-center justify-center bg-gray-100">
+      <div className="space-y-6 p-6 sm:p-8">
         <h1 className="text-2xl text-gray-900">Login Page</h1>
         <ul className="list-disc">
           <li>One</li>
           <li>Two</li>
           <li>Three</li>
         </ul>
-        <section className="bg-white rounded-lg shadow sm:max-w-md">
-          <div className="p-6 space-y-6 md:space-y-6 sm:p-8">
-            <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900">
+        <section className="rounded-lg bg-white shadow sm:max-w-md">
+          <div className="space-y-6 p-6 sm:p-8 md:space-y-6">
+            <h1 className="text-2xl leading-tight font-bold tracking-tight text-gray-900">
               Sign in to your account
             </h1>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900"
-                >
-                  Your email
-                </label>
+              <div className="relative">
                 <input
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5"
+                  className="peer block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 placeholder-transparent focus:border-blue-600 focus:ring-blue-600"
                   type="email"
                   id="email"
                   placeholder="name@yourcompany.com"
                   required
                 />
+                <label
+                  htmlFor="email"
+                  className="peer absolute -top-4.5 left-0 mb-2 block text-sm font-medium text-gray-600 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
+                >
+                  Your email
+                </label>
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900"
+                  className="mb-2 block text-sm font-medium text-gray-900"
                 >
                   Your email
                 </label>
                 <input
                   type="password"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5"
+                  className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-blue-600 focus:ring-blue-600"
                   id="password"
                   placeholder="..........."
                   required
@@ -55,12 +53,12 @@ function Page() {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
-                  <div className="flex items-center h-5">
+                  <div className="flex h-5 items-center">
                     <input
                       id="remember"
                       type="checkbox"
                       aria-describedby="remember"
-                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                      className="h-4 w-4 rounded border border-gray-300 bg-gray-50 focus:ring-3 focus:ring-blue-300"
                       required={false}
                     />
                   </div>
@@ -79,12 +77,12 @@ function Page() {
               </div>
               <button
                 type="submit"
-                className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                className="w-full rounded-lg bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none"
               >
                 Sign in
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don&apos;t have an account yet?{" "}
+                Don&apos;t have an account yet?{' '}
                 <a
                   className="font-medium text-blue-600 hover:underline"
                   href="#"
@@ -97,7 +95,7 @@ function Page() {
         </section>
       </div>
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page

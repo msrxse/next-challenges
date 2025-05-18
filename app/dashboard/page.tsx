@@ -1,5 +1,5 @@
-import React from "react";
-import { lusitana } from "@/app/ui/fonts";
+import React from 'react'
+import { lusitana } from '@/app/ui/fonts'
 
 function Page() {
   return (
@@ -9,7 +9,7 @@ function Page() {
       </h1>
       <div>Select a challenge to get started</div>
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page

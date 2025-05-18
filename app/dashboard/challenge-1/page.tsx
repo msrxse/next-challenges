@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
 function Page() {
   return (
-    <main className="bg-gray-100 h-full flex justify-center items-center">
+    <main className="flex h-full items-center justify-center bg-gray-100">
       Challenge-1
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page

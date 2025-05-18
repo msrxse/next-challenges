@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import { Button } from "@/app/ui/button";
-import React, { useRef, useState } from "react";
+import { Button } from '@/app/ui/button'
+import React, { useRef, useState } from 'react'
 const catNames = [
-  "neo",
-  "millie",
-  "millie_neo",
-  "neo_banana",
-  "neo_2",
-  "bella",
-  "poppy",
-];
-import Image from "next/image";
-import clsx from "clsx";
-import { flushSync } from "react-dom";
+  'neo',
+  'millie',
+  'millie_neo',
+  'neo_banana',
+  'neo_2',
+  'bella',
+  'poppy',
+]
+import Image from 'next/image'
+import clsx from 'clsx'
+import { flushSync } from 'react-dom'
 
 const catList = catNames.map((cat, index) => ({
   id: index,
@@ -21,15 +21,15 @@ const catList = catNames.map((cat, index) => ({
   alt: cat,
   width: 300,
   height: 200,
-}));
+}))
 
 function Page() {
-  const selectedRef = useRef<HTMLLIElement>(null);
-  const [index, setIndex] = useState(0);
+  const selectedRef = useRef<HTMLLIElement>(null)
+  const [index, setIndex] = useState(0)
 
   return (
-    <div className="bg-gray-100 h-full flex flex-col justify-center items-center overflow-hidden">
-      <h1 className="text-3xl mb-10">Image Carousel</h1>
+    <div className="flex h-full flex-col items-center justify-center overflow-hidden bg-gray-100">
+      <h1 className="mb-10 text-3xl">Image Carousel</h1>
       <ul className="px-4">
         <li>
           - This image carousel has a “Next” button that switches the active
@@ -51,17 +51,17 @@ function Page() {
           onClick={() => {
             flushSync(() => {
               if (index < catList.length - 1) {
-                setIndex(index + 1);
+                setIndex(index + 1)
               } else {
-                setIndex(0);
+                setIndex(0)
               }
-            });
+            })
             if (selectedRef.current !== null) {
               selectedRef.current.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center",
-              });
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center',
+              })
             }
           }}
         >
@@ -69,13 +69,13 @@ function Page() {
         </Button>
       </nav>
       <div className="container overflow-scroll">
-        <ul className="flex flex-row justify-start w-[2170px]">
+        <ul className="flex w-[2170px] flex-row justify-start">
           {catList.map((cat, i) => (
             <li
               key={cat.id}
               ref={index === i ? selectedRef : null}
-              className={clsx("w-[310px] m-2", {
-                "ring-4 ring-blue-600": index === i,
+              className={clsx('m-2 w-[310px]', {
+                'ring-4 ring-blue-600': index === i,
               })}
             >
               <Image
@@ -89,7 +89,7 @@ function Page() {
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-export default Page;
+export default Page

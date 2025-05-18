@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 /**
  * CSS display property
@@ -22,19 +22,19 @@ import React from "react";
  */
 function Page() {
   return (
-    <main className="bg-gray-300 h-full">
-      <div className="bg-gray-100 grid lg:grid-cols-2 2xl:grid-cols-5">
-        <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 2xl:col-span-2">
+    <main className="h-full bg-gray-300">
+      <div className="grid bg-gray-100 lg:grid-cols-2 2xl:grid-cols-5">
+        <div className="mx-auto max-w-md px-8 py-12 sm:max-w-xl lg:max-w-full lg:px-12 lg:py-24 xl:mr-0 2xl:col-span-2">
           <div className="xl:max-w-xl">
             <img src="/logo.svg" alt="Workcation" className="h-10" />
             <Image
-              className="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden"
+              className="mt-6 rounded-lg object-center shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover lg:hidden"
               src="/beach-work.jpg"
               alt="Woman workcationing on the beach"
               width={2693}
               height={1795}
             />
-            <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl ">
+            <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
               You can work form anywhere.
               <br className="inline" />
               <span className="text-indigo-500">Take advantage of it.</span>
@@ -46,12 +46,7 @@ function Page() {
             </p>
             <div className="mt-4 sm:mt-6">
               <a
-                className="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 
-                hover:bg-indigo-400 hover:-translate-y-0.5 
-                focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 
-                active:bg-indigo-600
-                  transform transition text-white uppercase
-                  tracking-wider font-semibold text-sm sm:text-base"
+                className="focus:ring-opacity-50 inline-block transform rounded-lg bg-indigo-500 px-5 py-3 text-sm font-semibold tracking-wider text-white uppercase shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-400 focus:ring focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none active:bg-indigo-600 sm:text-base"
                 href="#"
               >
                 Book your scape
@@ -59,9 +54,9 @@ function Page() {
             </div>
           </div>
         </div>
-        <div className="hidden relative lg:block 2xl:col-span-3">
+        <div className="relative hidden lg:block 2xl:col-span-3">
           <Image
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center"
             src="/beach-work.jpg"
             alt="Woman workcationing on the beach"
             width={2693}
@@ -70,7 +65,7 @@ function Page() {
         </div>
       </div>
     </main>
-  );
+  )
 }
 
-export default Page;
+export default Page
