@@ -14,6 +14,7 @@ import {
   TableCellsIcon,
   TicketIcon,
   WindowIcon,
+  KeyIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -51,13 +52,14 @@ const links = [
   { name: "Banking App", href: "/dashboard/banking-app", icon: BanknotesIcon },
   { name: "Product Page", href: "/dashboard/product-page", icon: GiftTopIcon },
   { name: "Challenge 1", href: "/dashboard/challenge-1", icon: BookmarkIcon },
+  { name: "Login Page", href: "/dashboard/login-page", icon: KeyIcon },
 ];
 
 function NavLinks({}) {
   const pathname = usePathname();
 
   return (
-    <>
+    <div className="flex flex-wrap">
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
@@ -76,7 +78,7 @@ function NavLinks({}) {
           </Link>
         );
       })}
-    </>
+    </div>
   );
 }
 
