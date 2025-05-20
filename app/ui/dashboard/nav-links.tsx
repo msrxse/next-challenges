@@ -19,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
+import { LinkIcon } from '@heroicons/react/20/solid'
 
 const links = [
   {
@@ -55,6 +56,7 @@ const links = [
   { name: 'Challenge 1', href: '/dashboard/challenge-1', icon: BookmarkIcon },
   { name: 'Login Page', href: '/dashboard/login-page', icon: KeyIcon },
   { name: 'CSS Grid', href: '/dashboard/css-grid', icon: MapIcon },
+  { name: 'Link List', href: '/dashboard/link-list', icon: LinkIcon },
 ]
 
 function NavLinks() {
