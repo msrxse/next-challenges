@@ -16,6 +16,7 @@ import {
   WindowIcon,
   KeyIcon,
   MapIcon,
+  CursorArrowRippleIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
@@ -57,6 +58,11 @@ const links = [
   { name: 'Login Page', href: '/dashboard/login-page', icon: KeyIcon },
   { name: 'CSS Grid', href: '/dashboard/css-grid', icon: MapIcon },
   { name: 'Link List', href: '/dashboard/link-list', icon: LinkIcon },
+  {
+    name: 'CSS Nested Corners',
+    href: '/dashboard/css-nested-corners',
+    icon: CursorArrowRippleIcon,
+  },
 ]
 
 function NavLinks() {
