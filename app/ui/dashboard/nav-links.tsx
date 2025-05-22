@@ -17,12 +17,15 @@ import {
   KeyIcon,
   MapIcon,
   CursorArrowRippleIcon,
+  CurrencyDollarIcon,
+  FunnelIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import { LinkIcon } from '@heroicons/react/20/solid'
 
 const links = [
+  { name: 'Challenge 1', href: '/dashboard/challenge-1', icon: BookmarkIcon },
   {
     name: 'List of Refs',
     href: '/dashboard/list-of-refs',
@@ -54,7 +57,6 @@ const links = [
   },
   { name: 'Banking App', href: '/dashboard/banking-app', icon: BanknotesIcon },
   { name: 'Product Page', href: '/dashboard/product-page', icon: GiftTopIcon },
-  { name: 'Challenge 1', href: '/dashboard/challenge-1', icon: BookmarkIcon },
   { name: 'Login Page', href: '/dashboard/login-page', icon: KeyIcon },
   { name: 'CSS Grid', href: '/dashboard/css-grid', icon: MapIcon },
   { name: 'Link List', href: '/dashboard/link-list', icon: LinkIcon },
@@ -62,6 +64,16 @@ const links = [
     name: 'CSS Nested Corners',
     href: '/dashboard/css-nested-corners',
     icon: CursorArrowRippleIcon,
+  },
+  {
+    name: 'Carbon Registry',
+    href: '/dashboard/carbon-registry',
+    icon: CurrencyDollarIcon,
+  },
+  {
+    name: 'Pricing Card',
+    href: '/dashboard/pricing-card',
+    icon: FunnelIcon,
   },
 ]
 
