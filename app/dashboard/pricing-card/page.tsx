@@ -75,9 +75,13 @@ function Page() {
                 bibendum.
               </li>
             </ul>
-            <button className="mt-10 w-full rounded-sm bg-blue-600 px-0.5 py-1.5 font-semibold tracking-tight text-white shadow-md">
+            <a
+              href="#"
+              aria-describedby="tier-personal"
+              className="mt-10 block rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
               Get started today
-            </button>
+            </a>
           </div>
         </div>
       </div>
