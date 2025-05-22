@@ -1,3 +1,4 @@
+import { EnvelopeIcon, LinkSlashIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
 const data = {
@@ -115,12 +116,16 @@ function Page() {
       <div className="w-full py-16">
         <div className="mx-auto flex max-w-md flex-col gap-y-10">
           <h1 className="text-2xl text-gray-900">Carbon Registry (WIP)</h1>
-          <p className="text-sm text-gray-900">
-            Gravida quam mi erat tortor neque molestie. Auctor aliquet at
-            porttitor a enim nunc suscipit tincidunt nunc. Et non lorem tortor
-            posuere. Nunc eu scelerisque interdum eget tellus non nibh
-            scelerisque bibendum.
-          </p>
+
+          <div className="grid grid-cols-2 rounded-2xl bg-white p-6 text-sm/6 shadow-md ring ring-gray-900/15">
+            <h1 className="text-3xl tracking-tight">{data.company.name}</h1>
+            <span className="flex items-center gap-2">
+              <p className="text-gray-700">{data.company.headquarters.city}</p>
+              <p className="col-start-3 font-bold">{data.company.founded}</p>
+              <EnvelopeIcon className="size-4" />
+              <LinkSlashIcon className="size-4" />
+            </span>
+          </div>
         </div>
       </div>
     </main>
