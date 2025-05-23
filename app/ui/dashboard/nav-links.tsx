@@ -19,10 +19,11 @@ import {
   CursorArrowRippleIcon,
   CurrencyDollarIcon,
   FunnelIcon,
+  CreditCardIcon,
+  LinkIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
-import { LinkIcon } from '@heroicons/react/20/solid'
 
 const links = [
   { name: 'Challenge 1', href: '/dashboard/challenge-1', icon: BookmarkIcon },
@@ -74,6 +75,11 @@ const links = [
     name: 'Pricing Card',
     href: '/dashboard/pricing-card',
     icon: FunnelIcon,
+  },
+  {
+    name: 'Mobile Menu',
+    href: '/dashboard/mobile-menu',
+    icon: CreditCardIcon,
   },
 ]
 
