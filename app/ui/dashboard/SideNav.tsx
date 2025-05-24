@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function SideNav() {
   return (
-    <div className="flex flex-col px-3 py-4 md:px-2">
+    <div className="flex flex-col overflow-scroll px-3 py-4 md:h-screen md:px-2">
       <Link
         className={`${lusitana.className} mb-2 flex h-[48px] w-32 items-center justify-center rounded-md bg-blue-400 text-xl text-white md:w-full md:text-2xl`}
         href="/dashboard"

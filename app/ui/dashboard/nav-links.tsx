@@ -81,6 +81,11 @@ const links = [
     href: '/dashboard/mobile-menu',
     icon: CreditCardIcon,
   },
+  {
+    name: 'Responsive Table',
+    href: '/dashboard/responsive-table',
+    icon: TableCellsIcon,
+  },
 ]
 
 function NavLinks() {
